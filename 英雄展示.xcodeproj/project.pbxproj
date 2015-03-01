@@ -14,6 +14,8 @@
 		7D88B7981AA1B13200D8471E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D88B7971AA1B13200D8471E /* Images.xcassets */; };
 		7D88B79B1AA1B13200D8471E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D88B7991AA1B13200D8471E /* LaunchScreen.xib */; };
 		7D88B7A71AA1B13200D8471E /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88B7A61AA1B13200D8471E /* ____Tests.m */; };
+		7D88B7B21AA1B1BC00D8471E /* JHHero.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88B7B11AA1B1BC00D8471E /* JHHero.m */; };
+		7D88B7B41AA1BA0200D8471E /* heros.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D88B7B31AA1BA0200D8471E /* heros.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		7D88B7A01AA1B13200D8471E /* 英雄展示Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "英雄展示Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D88B7A51AA1B13200D8471E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D88B7A61AA1B13200D8471E /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		7D88B7B01AA1B1A700D8471E /* JHHero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHHero.h; sourceTree = "<group>"; };
+		7D88B7B11AA1B1BC00D8471E /* JHHero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHHero.m; sourceTree = "<group>"; };
+		7D88B7B31AA1BA0200D8471E /* heros.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = heros.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +90,8 @@
 				7D88B78F1AA1B13200D8471E /* AppDelegate.m */,
 				7D88B7911AA1B13200D8471E /* ViewController.h */,
 				7D88B7921AA1B13200D8471E /* ViewController.m */,
+				7D88B7B01AA1B1A700D8471E /* JHHero.h */,
+				7D88B7B11AA1B1BC00D8471E /* JHHero.m */,
 				7D88B7941AA1B13200D8471E /* Main.storyboard */,
 				7D88B7971AA1B13200D8471E /* Images.xcassets */,
 				7D88B7991AA1B13200D8471E /* LaunchScreen.xib */,
@@ -96,6 +103,7 @@
 		7D88B78A1AA1B13200D8471E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D88B7B31AA1BA0200D8471E /* heros.plist */,
 				7D88B78B1AA1B13200D8471E /* Info.plist */,
 				7D88B78C1AA1B13200D8471E /* main.m */,
 			);
@@ -201,6 +209,7 @@
 			files = (
 				7D88B7961AA1B13200D8471E /* Main.storyboard in Resources */,
 				7D88B79B1AA1B13200D8471E /* LaunchScreen.xib in Resources */,
+				7D88B7B41AA1BA0200D8471E /* heros.plist in Resources */,
 				7D88B7981AA1B13200D8471E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +231,7 @@
 				7D88B7931AA1B13200D8471E /* ViewController.m in Sources */,
 				7D88B7901AA1B13200D8471E /* AppDelegate.m in Sources */,
 				7D88B78D1AA1B13200D8471E /* main.m in Sources */,
+				7D88B7B21AA1B1BC00D8471E /* JHHero.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
