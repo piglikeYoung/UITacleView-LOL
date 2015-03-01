@@ -49,7 +49,7 @@
     
     // 设置Cell的高度
     // 当每一行的cell高度一致的时候使用属性设置cell的高度
-//    self.tableView.rowHeight = 60;
+    self.tableView.rowHeight = 60;
     self.tableView.delegate = self;
 }
 
@@ -78,20 +78,50 @@
     cell.textLabel.text = hero.name;
     cell.detailTextLabel.text = hero.intro;
     cell.imageView.image = [UIImage imageNamed:hero.icon];
+    
+    // 2.3设置cell的辅助视图
+    if (1==indexPath.row) {
+        cell.accessoryView = [[UISwitch alloc] init];
+    }else{
+        cell.accessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    }
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    // 2.4设置cell的背景颜色
+    // 通过backgroundColor 和 backgroundView 都可以设置cell的背景颜色
+    // 但是backgroundview 的优先级比 backgroundColor的 高
+    // 所以同时设置了backgroundColor和backgroundview，backgroundview会盖住backgroundColor
+    
+    // 设置默认状态背景
+//    UIView *view = [[UIView alloc] init];
+//    view.backgroundColor = [UIColor blueColor];
+//    cell.backgroundView = view;
+//    
+//    cell.backgroundColor = [UIColor redColor];
+    
+    UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"buttondelete"]];
+    
+    cell.backgroundView = iv;
+    
+    // 设置选中背景颜色
+    UIView *view2 = [[UIView alloc] init];
+    view2.backgroundColor = [UIColor purpleColor];
+    cell.selectedBackgroundView =view2;
+    
     // 3.返回cell
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 // 当每一行的cell的高度不一致的时候就使用代理方法设置cell的高度
--(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (1 == indexPath.row) {
-        return 180;
-    }
-    
-    return 44;
-}
+//-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (1 == indexPath.row) {
+//        return 180;
+//    }
+//    
+//    return 44;
+//}
 
 #pragma mark - 控制状态栏是否显示
 /**
