@@ -68,47 +68,28 @@
 /** 返回哪一组的哪一行显示什么内容 */
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 1.创建cell
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     
-    // 2.设置数据
-    // 2.1取出对应行的模型
+    // 定义变量保存重用标记的值
+    static NSString *identifier = @"hero";
+    
+    // 1.先去缓存池中查找是否有满足条件的Cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    // 2.如果缓冲池中没有符合条件的cell，就自己创建一个Cell
+    if(cell == nil){
+        // 3.创建Cell, 并且设置一个唯一的标记
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        
+        NSLog(@"创建一个新的Cell");
+    }
+    
+    // 4.给cell设置数据
     JHHero *hero = self.heros[indexPath.row];
-    // 2.2赋值对应的数据
     cell.textLabel.text = hero.name;
     cell.detailTextLabel.text = hero.intro;
     cell.imageView.image = [UIImage imageNamed:hero.icon];
     
-    // 2.3设置cell的辅助视图
-    if (1==indexPath.row) {
-        cell.accessoryView = [[UISwitch alloc] init];
-    }else{
-        cell.accessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    }
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    // 2.4设置cell的背景颜色
-    // 通过backgroundColor 和 backgroundView 都可以设置cell的背景颜色
-    // 但是backgroundview 的优先级比 backgroundColor的 高
-    // 所以同时设置了backgroundColor和backgroundview，backgroundview会盖住backgroundColor
-    
-    // 设置默认状态背景
-//    UIView *view = [[UIView alloc] init];
-//    view.backgroundColor = [UIColor blueColor];
-//    cell.backgroundView = view;
-//    
-//    cell.backgroundColor = [UIColor redColor];
-    
-    UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"buttondelete"]];
-    
-    cell.backgroundView = iv;
-    
-    // 设置选中背景颜色
-    UIView *view2 = [[UIView alloc] init];
-    view2.backgroundColor = [UIColor purpleColor];
-    cell.selectedBackgroundView =view2;
-    
-    // 3.返回cell
+    // 5.返回cell
     return cell;
 }
 
