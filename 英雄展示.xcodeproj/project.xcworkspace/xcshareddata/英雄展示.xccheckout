@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B544562B-84FB-432C-BFA6-CE8776DA2547</string>
+	<key>IDESourceControlProjectName</key>
+	<string>英雄展示</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>22F6B2946728A72A3DBF5E5D0D0A2C68E0E80E63</key>
+		<string>https://github.com/piglikeYoung/UITacleView-LOL.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>英雄展示.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>22F6B2946728A72A3DBF5E5D0D0A2C68E0E80E63</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/piglikeYoung/UITacleView-LOL.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>22F6B2946728A72A3DBF5E5D0D0A2C68E0E80E63</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>22F6B2946728A72A3DBF5E5D0D0A2C68E0E80E63</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E8%8B%B1%E9%9B%84%E5%B1%95%E7%A4%BA</string>
+		</dict>
+	</array>
+</dict>
+</plist>

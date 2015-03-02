@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "JHHero.h"
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -103,6 +103,51 @@
 //    
 //    return 44;
 //}
+
+
+/** 当某一行被选中的时候调用 */
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 0获得选中行的模型
+    JHHero *hero = self.heros[indexPath.row];
+    // 1.创建一个弹窗
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"修改数据" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    
+    // 设置alert的样式, 让alert显示出uitextfield
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    // 获取alert中的textfield
+    UITextField *textField = [alert textFieldAtIndex:0];
+    // 设置数据到textfield
+    textField.text = hero.name;
+    // 2.显示窗口
+    [alert show];
+    
+    // 通过alert的tag来传递选中的行号
+    alert.tag = indexPath.row;
+}
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (0 == buttonIndex) {
+        return;
+    }
+    
+    // 必定不是点击的取消
+    // 获取修改后的数据
+    UITextField *textField = [alertView textFieldAtIndex:0];
+    NSString *newStr = textField.text;
+    NSLog(@"newStr= %@",newStr);
+    
+    // 修改模型
+    // 取出对应行的模型数据
+    int row = alertView.tag;
+    JHHero *hero = self.heros[row];
+    hero.name = newStr;
+    
+    // 刷新指定行
+    NSIndexPath *path = [NSIndexPath indexPathForRow:row inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationRight];
+}
 
 #pragma mark - 控制状态栏是否显示
 /**
